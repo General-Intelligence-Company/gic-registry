@@ -1,13 +1,11 @@
 {
-  "name": "registry",
+  "name": "@gic/registry-site",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "registry:build": "shadcn build"
+    "start": "next start"
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.1.7",
