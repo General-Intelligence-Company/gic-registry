@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hello",
+  "type": "registry:ui",
+  "title": "Hello Badge",
+  "description": "Smoke-test item for the @gic registry pipeline — a tiny badge that renders \"GIC\". No env requirements.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "hello-badge.tsx",
+      "type": "registry:ui",
+      "target": "src/components/ui/hello-badge.tsx",
+      "content": "// Smoke-test item for the @gic registry install pipeline. Deliberately has no\n// npm or registry dependencies (not even `cn`) so it can install and render\n// on any Tailwind consumer, independent of whether @gic/ui-base is present.\nexport function HelloBadge({ className = \"\" }: { className?: string }) {\n  return (\n    <span\n      className={`inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-white px-2.5 py-0.5 text-xs font-medium uppercase tracking-wide text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-100 ${className}`.trim()}\n    >\n      <span aria-hidden=\"true\" className=\"inline-block h-1.5 w-1.5 rounded-full bg-emerald-500\" />\n      GIC\n    </span>\n  );\n}\n"
+    }
+  ]
+}

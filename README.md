@@ -1,23 +1,36 @@
-# registry-template
+# @gic Registry
 
-You can use the `shadcn` CLI to run your own component registry. Running your own
-component registry allows you to distribute your custom components, hooks, pages, and
-other files to any React project.
+Public [shadcn-compatible](https://ui.shadcn.com/docs/registry) registry for
+shared GIC product-app primitives and flows.
 
-> [!IMPORTANT]  
-> This template uses Tailwind v4. For Tailwind v3, see [registry-template-v3](https://github.com/shadcn-ui/registry-template-v3).
+Registry artifacts are served from `public/r/{name}.json`. Consumers configure:
 
-## Getting Started
+```json
+{
+  "registries": {
+    "@gic": {
+      "url": "https://raw.githubusercontent.com/General-Intelligence-Company/gic-registry/main/public/r/{name}.json"
+    }
+  }
+}
+```
 
-This is a template for creating a custom registry using Next.js.
+Then install with:
 
-- The template uses a `registry.json` file to define components and their files.
-- The `shadcn build` command is used to build the registry.
-- The registry items are served as static files under `public/r/[name].json`.
-- The template also includes a route handler for serving registry items.
-- Every registry item are compatible with the `shadcn` CLI.
-- We have also added v0 integration using the `Open in v0` api.
+```bash
+bunx shadcn@latest add @gic/billing
+```
 
-## Documentation
+## Published items
 
-Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view the full documentation.
+- `@gic/ui-base`
+- `@gic/auth`
+- `@gic/billing`
+- `@gic/hello` (pipeline smoke item)
+
+## Publishing
+
+The canonical item manifests and generated product-template sources live in
+the private `superoptimizers` repository. Publish reviewed
+`packages/gic-registry/__generated__/r/*.json` artifacts here and verify the
+anonymous raw GitHub URL before updating consumer pins.

@@ -1,80 +1,34 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "acme",
-  "homepage": "https://acme.com",
+  "name": "@gic/registry",
+  "homepage": "https://github.com/General-Intelligence-Company/gic-registry",
+  "meta": {
+    "version": "0.1.0"
+  },
   "items": [
     {
-      "name": "hello-world",
-      "type": "registry:component",
-      "title": "Hello World",
-      "description": "A simple hello world component",
-      "registryDependencies": ["button"],
-      "files": [
-        {
-          "path": "registry/new-york/blocks/hello-world/hello-world.tsx",
-          "type": "registry:component"
-        }
-      ]
+      "name": "auth",
+      "type": "registry:block",
+      "title": "Auth (Supabase email/password)",
+      "description": "Supabase email/password auth: /login page, /auth/callback route, proxy.ts session refresh + protected-route gating, and the lib/supabase client/server/admin/proxy helpers. Ships with supabase/seed.sql demo users (demo1@example.com, demo2@example.com, demo3@example.com — password: demo-password-123). Requires NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY, and SUPABASE_SERVICE_ROLE_KEY (server-only, used by lib/supabase/admin.ts)."
     },
     {
-      "name": "example-form",
-      "type": "registry:component",
-      "title": "Example Form",
-      "description": "A contact form with Zod validation.",
-      "dependencies": ["zod"],
-      "registryDependencies": ["button", "input", "label", "textarea", "card"],
-      "files": [
-        {
-          "path": "registry/new-york/blocks/example-form/example-form.tsx",
-          "type": "registry:component"
-        }
-      ]
+      "name": "billing",
+      "type": "registry:block",
+      "title": "Billing (Stripe subscriptions)",
+      "description": "Stripe billing block: /pricing, /settings/billing, /api/billing/*, /api/stripe/webhook, stripe helpers, entitlements, billing migrations. Soft-fail missing Stripe; hard-fail misconfigured. Env: STRIPE_SECRET_KEY, NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY, STRIPE_WEBHOOK_SECRET, APP_URL, STRIPE_PRICE_ID_BASIC|PRO|TEAM."
     },
     {
-      "name": "complex-component",
-      "type": "registry:component",
-      "title": "Complex Component",
-      "description": "A complex component showing hooks, libs and components.",
-      "registryDependencies": ["card"],
-      "files": [
-        {
-          "path": "registry/new-york/blocks/complex-component/page.tsx",
-          "type": "registry:page",
-          "target": "app/pokemon/page.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/components/pokemon-card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/components/pokemon-image.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/lib/pokemon.ts",
-          "type": "registry:lib"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/hooks/use-pokemon.ts",
-          "type": "registry:hook"
-        }
-      ]
+      "name": "hello",
+      "type": "registry:ui",
+      "title": "Hello Badge",
+      "description": "Smoke-test item for the @gic registry pipeline — a tiny badge that renders \"GIC\". No env requirements."
     },
     {
-      "name": "example-with-css",
-      "type": "registry:component",
-      "title": "Example with CSS",
-      "description": "A login form with a CSS file.",
-      "files": [
-        {
-          "path": "registry/new-york/blocks/example-with-css/example-card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/blocks/example-with-css/example-card.css",
-          "type": "registry:component"
-        }
-      ]
+      "name": "ui-base",
+      "type": "registry:block",
+      "title": "GIC UI Base",
+      "description": "Foundational UI primitives for GIC product repos — cn utility, Button, Input, Card, Badge, Alert, and MeasuredTextBlock (ported from the base repo template). No env requirements."
     }
   ]
 }
