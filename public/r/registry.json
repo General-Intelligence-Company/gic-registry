@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "@gic/registry",
-  "homepage": "https://github.com/General-Intelligence-Company/gic-registry",
+  "homepage": "https://github.com/General-Intelligence-Company/superoptimizers/tree/main/packages/gic-registry",
   "meta": {
     "version": "0.1.0"
   },
@@ -16,7 +16,7 @@
       "name": "billing",
       "type": "registry:block",
       "title": "Billing (Stripe subscriptions)",
-      "description": "Stripe billing block: /pricing, /settings/billing, /api/billing/*, /api/stripe/webhook, stripe helpers, entitlements, billing migrations. Soft-fail missing Stripe; hard-fail misconfigured. Env: STRIPE_SECRET_KEY, NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY, STRIPE_WEBHOOK_SECRET, APP_URL, STRIPE_PRICE_ID_BASIC|PRO|TEAM."
+      "description": "Stripe billing block: /pricing, /settings/billing, /api/billing/*, /api/stripe/webhook, stripe helpers, entitlements, billing migrations. Disabled by default; soft-fail missing Stripe; hard-fail misconfigured. Env: NEXT_PUBLIC_GIC_BILLING_ENABLED, STRIPE_SECRET_KEY, NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY, STRIPE_WEBHOOK_SECRET, APP_URL, STRIPE_PRICE_ID_BASIC|PRO|TEAM."
     },
     {
       "name": "hello",
